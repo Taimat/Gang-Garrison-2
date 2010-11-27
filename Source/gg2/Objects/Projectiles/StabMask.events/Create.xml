@@ -14,11 +14,12 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">{
-    hitDamage = 8;
+    hitDamage = 200;
     alarm[0]=6;
     playsound(x,y,KnifeSnd)
    
-}</argument>
+}
+</argument>
       </arguments>
     </action>
   </actions>

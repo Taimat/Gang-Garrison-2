@@ -16,7 +16,7 @@
         <argument kind="STRING">{
     if(readyToShoot == true and BladesOut&lt;MaxBlades &amp;&amp; ammoCount &gt; 0)  {
         playsound(x,y,BladeSnd);
-        ammoCount -= 25;
+
         var shot;
         randomize();
             shot = instance_create(x+lengthdir_x(5,owner.aimDirection),y+lengthdir_y(5,owner.aimDirection),BladeB);
@@ -25,9 +25,9 @@
             shot.owner=owner;
             shot.ownerPlayer=ownerPlayer;
             shot.team=owner.team;
-            //bladeAddDamage = floor((bladeMaxAddDamage/100)*bladePower+bladeBaseDamage);
-            //shot.hitDamage = bladeBaseDamage + bladeAddDamage;
-            shot.hitDamage = 17;
+            bladeAddDamage = floor((bladeMaxAddDamage/maxAmmo)*ammoCount);
+            shot.hitDamage = bladeBaseDamage + bladeAddDamage;
+            //shot.hitDamage = 17;
             BladesOut += 1;
             shot.weapon=WEAPON_BLADE;
             with(shot) {
@@ -35,6 +35,7 @@
             }
         justShot=true;
         readyToShoot=false;
+        ammoCount -= 35;
         if ammoCount &gt; 0 alarm[0]=refireTime;
         else alarm[0]=35;
     }

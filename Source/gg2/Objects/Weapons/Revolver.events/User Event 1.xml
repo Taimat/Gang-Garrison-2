@@ -22,14 +22,14 @@
         
         shot = instance_create(x,y + yoffset + 1,Shot);
         shot.direction=owner.aimDirection+ random(2)-1;
-        shot.speed=21;
+        shot.speed=23;
         shot.owner=owner;
         shot.ownerPlayer=ownerPlayer;
         shot.team=owner.team;
         shot.damage = 28;
         shot.weapon=WEAPON_REVOLVER;
         with(shot) {
-            hspeed+=owner.hspeed;
+            hspeed+=owner.hspeed/2;
             //motion_add(owner.direction, owner.speed);
         }
         justShot=true;

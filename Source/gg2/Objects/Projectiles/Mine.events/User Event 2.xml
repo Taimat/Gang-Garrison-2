@@ -54,7 +54,9 @@
                 }
                 if id==other.ownerPlayer.object and other.team == team {
                     moveStatus = 1;
-                    vspeed*=0.8;
+                    hspeed *= 1.4;
+                    vspeed *= 0.8;
+                    hp+=(other.explosionDamage*(1-(distance_to_object(other)/other.blastRadius)))/4;
                 }
             }
             cloakAlpha = min(cloakAlpha + 0.2, 1);

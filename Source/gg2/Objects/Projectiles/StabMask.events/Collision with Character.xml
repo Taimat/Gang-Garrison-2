@@ -13,8 +13,10 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">    if(other.id != ownerPlayer.object and other.team != team  &amp;&amp; other.hp &gt; 0 &amp;&amp; other.ubered == 0) {
-            other.hp -= hitDamage;
+        <argument kind="STRING">
+        if(other.id != ownerPlayer.object and other.team != team  &amp;&amp; other.hp &gt; 0 &amp;&amp; other.ubered == 0) {
+            if(!collision_line(x,y-10,other.x,other.y,Obstacle,true,true)) &amp;&amp;  (!collision_line(x,y-10,other.x,other.y,TeamGate,true,true)){
+                other.hp -= hitDamage;
 //new stuff
             if (other.lastDamageDealer != ownerPlayer &amp;&amp; other.lastDamageDealer != other.player){
                 other.secondToLastDamageDealer = other.lastDamageDealer;
@@ -35,9 +37,10 @@
                 blood = instance_create(x,y,Blood);
                 blood.direction = direction-180;
                 }
-            }
-        instance_destroy();
-        }
+            }   
+instance_destroy();
+}
+}
 </argument>
       </arguments>
     </action>

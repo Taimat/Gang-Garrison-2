@@ -20,9 +20,9 @@
 }
 
 else if timer == 0{
-    /*if global.redCaps &gt; global.blueCaps global.winners = TEAM_RED;
-    else if global.blueCaps &gt; global.redCaps global.winners = TEAM_BLUE;
-    else*/ global.winners = TEAM_SPECTATOR;
+    if GeneratorRed.hp &gt; GeneratorBlue.hp+500 global.winners = TEAM_RED;
+    else if GeneratorBlue.hp &gt; GeneratorRed.hp+500 global.winners = TEAM_BLUE;
+    else global.winners = TEAM_SPECTATOR;
 }
 </argument>
       </arguments>

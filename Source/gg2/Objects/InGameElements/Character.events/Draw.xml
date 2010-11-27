@@ -53,7 +53,15 @@ if global.myself.team == team &amp;&amp; cloakAlpha&lt;0.5 {
 if team == global.myself.team &amp;&amp; (id != global.myself.object.id || global.showHealthBar == 1){
     draw_set_alpha(1);
     draw_healthbar(xr-10, yr-30, xr+10, yr-25,hp*100/maxHp,c_black,c_red,c_green,0,true,true);
-}    
+}else{
+if(global.myself.class==CLASS_SPY &amp;&amp; id != global.myself.object.id &amp;&amp; other.cloak = false){
+    if distance_to_object(global.myself.object)&lt;225 {
+    draw_set_alpha(1);
+    draw_healthbar(xr-10, yr-30, xr+10, yr-25,hp*100/maxHp,c_black,c_red,c_green,0,true,true);
+    }
+    }
+    }    
+
 if(distance_to_point(mouse_x, mouse_y)&lt;25) {
     if cloak &amp;&amp; team!=global.myself.team exit;
     draw_set_alpha(1);

@@ -13,12 +13,14 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">if(other.team != team) {
+        <argument kind="STRING">if(!collision_line(x,y-10,other.x,other.y,Obstacle,true,true)) &amp;&amp;  (!collision_line(x,y-10,other.x,other.y,TeamGate,true,true)){
+if(other.team != team) {
 other.hp -= hitDamage;
 //new stuff
 other.lastDamageDealer = ownerPlayer;
 other.lastDamageSource = weapon;
 instance_destroy();
+}
 }
 </argument>
       </arguments>

@@ -20,15 +20,15 @@
     randomize();
     repeat(6) {
         shot = instance_create(x,y,Shot);
-        shot.direction=owner.aimDirection+(random(15)-7);
+        shot.direction=owner.aimDirection+(random(18)-9);
         shot.speed=11+random(4);
         shot.owner=owner;
         shot.ownerPlayer=ownerPlayer;
         shot.team=owner.team;
         shot.weapon=WEAPON_SCATTERGUN;
         with(shot) {   
-            hspeed+=owner.hspeed;
-            alarm[0]=35;
+            hspeed+=owner.hspeed/1.5;
+            alarm[0]=30;
             //motion_add(owner.direction, owner.speed);
         }
     }

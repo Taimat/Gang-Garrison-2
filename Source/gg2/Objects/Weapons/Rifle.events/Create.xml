@@ -23,6 +23,9 @@
     hitDamage=baseDamage;
     shot=false;
     t=0;
+    ammoCount = 0;
+    maxAmmo = 0;
+    refireTime = 40;
 }
 </argument>
       </arguments>

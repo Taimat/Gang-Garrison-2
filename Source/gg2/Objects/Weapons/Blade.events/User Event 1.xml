@@ -14,7 +14,7 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">{
-    if(readyToShoot and bubbleCount &lt; 25) {
+    if(readyToShoot and bubbleCount &lt; 30) {
         var shot;
         randomize();
             shot = instance_create(x+lengthdir_x(8,owner.aimDirection),y+lengthdir_y(8,owner.aimDirection),Bubble);
@@ -30,7 +30,7 @@
             }
         justShot=true;
         readyToShoot=false;
-        alarm[0]=refireTime;//-random(3);
+        alarm[0]=refireTime-2;//-random(3);
         bubbleCount+=1;
     }
 }

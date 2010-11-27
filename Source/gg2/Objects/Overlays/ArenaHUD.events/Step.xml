@@ -143,6 +143,7 @@ if timer == 0{
         overtime = 1;
     }
     else if endCount == 300 || gameStarted == 0 {
+        if 
         global.winners = TEAM_SPECTATOR;
     }
 }

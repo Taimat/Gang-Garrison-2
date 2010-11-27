@@ -26,7 +26,7 @@
     image_speed=tauntspeed;
 } 
 
-if(pressedKeys &amp; $80) &amp;&amp; taunting==false &amp;&amp; omnomnomnom==false{
+if(pressedKeys &amp; $80) &amp;&amp; taunting==false &amp;&amp; omnomnomnom==false &amp;&amp; jumpStrength&gt;0{
     if(not place_free(x,y+1) &amp;&amp; place_free(x,y)) {
         if canCloak {
             if currentWeapon.readyToStab==true {
@@ -195,36 +195,36 @@ else if nutsNBolts &gt; 100 nutsNBolts = 100;
 if ubered == 1 {
     if instance_exists(currentWeapon) {
         if currentWeapon.object_index == Rocketlauncher {
-            currentWeapon.rocketcount = 4;
+            currentWeapon.ammoCount = 4;
             currentWeapon.alarm[5] = -1;
         }
         else if currentWeapon.object_index == Scattergun {
-            currentWeapon.shellCount = 6;
+            currentWeapon.ammoCount = 6;
             currentWeapon.alarm[5] = -1;
         }
         else if currentWeapon.object_index == Flamethrower {
-            currentWeapon.gas = 200;
+            currentWeapon.ammoCount = 200;
         }
         else if currentWeapon.object_index == Shotgun {
-            currentWeapon.shellCount = 8;
+            currentWeapon.ammoCount = 8;
             currentWeapon.alarm[5] = -1;
         }
         else if currentWeapon.object_index == Revolver {
-            currentWeapon.bulletCount = 6;
+            currentWeapon.ammoCount = 6;
             currentWeapon.alarm[5] = -1;
         }
         else if currentWeapon.object_index == Minigun {
-            currentWeapon.bullets = 200;
+            currentWeapon.ammoCount = 200;
         }
         else if currentWeapon.object_index == Minegun {
-            currentWeapon.mineCount = 8;
+            currentWeapon.ammoCount = 8;
             currentWeapon.alarm[5] = -1;
         }
         else if currentWeapon.object_index == Blade {
-            currentWeapon.bladePower = 100;
+            currentWeapon.ammoCount = 200;
         }
         else if currentWeapon.object_index == Medigun {
-            currentWeapon.needleCount = 40;
+            currentWeapon.ammoCount = 40;
             currentWeapon.alarm[5] = -1;
         }
     }
